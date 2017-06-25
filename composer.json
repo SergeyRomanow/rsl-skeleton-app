@@ -8,13 +8,15 @@
 		"mvc",
 		"rsl"
 	],
-	"homepage": "http://www.MyRomanow.ru",
+	"homepage": "https://github.com/SergeyRomanow/rsl-skeleton-app",
 	"minimum-stability": "dev",
 	"require": {
-		"php" : "^5.6 || ^7.0",
-
-		"rsl-framework/rsl-mvc": "*"
-
+		"php": "^5.3.3 || ^7.0"
+		
+	},
+	"require-dev": {
+		
+	
 	},
 	"authors": [
 		{
