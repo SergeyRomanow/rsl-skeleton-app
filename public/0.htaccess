@@ -1,0 +1,72 @@
+#Устанавливает кодировку в браузере по умолчанию в UTF-8
+AddDefaultCharset utf-8
+
+# Попробуйте эту настройку .htaccess, 
+# если у Вас возникли проблемы с отображением стилей css
+#AddDefaultCharset cp-1251
+
+RewriteEngine on
+Options +FollowSymlinks
+RewriteBase /
+
+# ===================================================================
+# Редирект с адреса с www-префиксом на адрес без www
+# ===================================================================
+RewriteCond %{HTTP_HOST} ^www.framework/rsl.ru/Web/$ [NC]
+RewriteRule ^(.*)$ http://framework/rsl/Web/$1 [R=301,L]
+# ===================================================================
+
+#Все страницы одного домена на главную страницу другого домена
+RewriteCond %{REQUEST_URI} (.*)
+#RewriteRule ^(.*)$ http://framework/rsl/Web [R=301,L]
+
+#ErrorDocument 404 /
+
+#RewriteCond %{REQUEST_FILENAME} !-f
+#RewriteCond %{REQUEST_FILENAME} -s [OR]
+#RewriteCond %{REQUEST_FILENAME} -l [OR]
+#RewriteCond %{REQUEST_FILENAME} -d
+
+#RewriteRule ^.*$ - [L]
+#RewriteRule ^(.*)$ /rsl/web/index.php
+#RewriteRule ^.*$ index.php [L]
+
+
+# ==================================
+
+
+#RewriteCond %{HTTP_HOST} (.*)
+#RewriteCond %{REQUEST_URI} /$ [NC]
+#RewriteCond %{REQUEST_FILENAME} !-d
+#RewriteRule ^(.*)(/)$ $1 [R=301,L]
+
+# Просмотр директорй на пямую
+#Options -Indexes
+#Options -Includes
+
+
+#запос не директория
+#RewriteCond %{REQUEST_FILENAME} !-d
+
+#запрос не файл
+#RewriteCond %{REQUEST_FILENAME} !-f
+
+# переадресация строки запроса целиком
+#RewriteRule ^(.*) ./?%{QUERY_STRING}
+#RewriteRule ^(.*) /rsl/web/?%{QUERY_STRING}
+
+
+# ===================================================================
+# Переопределение страниц ошибок
+# ===================================================================
+#401  Авторизация не выполнена
+ErrorDocument 401 http://domain.ru/errors/401.html
+#403  Доступ запрещен
+ErrorDocument 403 http://domain.ru/errors/403.html
+#404  Страница не найдена
+ErrorDocument 404 http://domain.ru/errors/404.html
+#500  Внутренняя ошибка сервера
+ErrorDocument 500 http://domain.ru/errors/500.html
+# ===================================================================
+
+

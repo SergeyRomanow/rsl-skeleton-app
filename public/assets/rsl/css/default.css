@@ -1,0 +1,26 @@
+
+
+body, header, footer { background: #D5BAE4; }
+header, footer, div, nav {
+    border: 1px solid;
+}
+
+body {
+    font: 14px Tahoma, Arial, sans-serif; 
+    width: 100%;
+}
+
+.banner {
+
+    background: #ECD5DE;
+    height: 200px;
+    color: tomato;
+}
+
+.layout { position: relative; }
+.layout DIV { border: 1px solid; position: absolute; }
+   .col1 { background: #C7E3E4; float: left; width: 200px; }
+   .col2 { background: #E0D2C7; 
+    margin: 0 100px 0 200px; /* Отступ справа и слева */
+   }
+   .col3 { background: #ECD5DE; width: 100px; float: right; }
